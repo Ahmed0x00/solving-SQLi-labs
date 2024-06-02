@@ -6,7 +6,7 @@ def main():
     option = get_user_choice()
     headers_text = get_user_headers()
     headers, url, tracking_id, session_id = process_headers(headers_text)
-    print("Hack Started!")
+    print("Retrieving the password..")
     retrieve_password(headers, url, tracking_id, session_id, option)
 
 if __name__ == "__main__":
