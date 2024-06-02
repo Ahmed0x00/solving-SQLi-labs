@@ -1,5 +1,6 @@
 def get_user_headers():
     print("Please enter the headers starting from the Host header (Press Enter twice to finish):")
+    print("Please don't enter empty lines and copy all the headers at once not line by line")
     user_input = []
     while True:
         line = input()
